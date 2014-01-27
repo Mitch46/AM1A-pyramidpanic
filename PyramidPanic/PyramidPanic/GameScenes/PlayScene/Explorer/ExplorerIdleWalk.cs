@@ -64,20 +64,20 @@ namespace PyramidPanic
             else if (Input.EdgeDetectKeyUp(Keys.Left))
             {
                 this.explorer.State = this.explorer.Idle;
-                this.explorer.Idle.Effect = SpriteEffects.FlipHorizontally;
+                this.explorer.Idle.Effect = SpriteEffects.None;
                 this.explorer.Idle.Rotation = 0f;
             }
             else if (Input.EdgeDetectKeyUp(Keys.Down))
             {
                 this.explorer.State = this.explorer.Idle;
                 this.explorer.Idle.Effect = SpriteEffects.None;
-                this.explorer.Idle.Rotation = (float)Math.PI / 2;
+                this.explorer.Idle.Rotation = 900f;
             }
             else if (Input.EdgeDetectKeyUp(Keys.Up))
             {
                 this.explorer.State = this.explorer.Idle;
-                this.explorer.Idle.Effect = SpriteEffects.None;
-                this.explorer.Idle.Rotation = (float)Math.PI / 2;
+                this.explorer.Idle.Effect = SpriteEffects.FlipVertically;
+                this.explorer.Idle.Rotation = (float)Math.PI / -2;
             }
 
             // Zorgt voor de animatie. Roept de Update(GameTime gameTim) method aan van 

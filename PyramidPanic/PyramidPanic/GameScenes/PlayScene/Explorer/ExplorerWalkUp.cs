@@ -43,31 +43,27 @@ namespace PyramidPanic
         public new void Update(GameTime gameTime)
         {
 
-            if (this.explorer.Position.X > 640 - 20)
+            this.explorer.Position -= this.velocity;
+
+            if (this.explorer.Position.Y < 20)
             {
-                //this.explorer.State = this.explorer.ExplorerWalkLeft;
-                //this.explorer.WalkRight.Initialize();
+                //Breng de explorer in de toestand walkdown
+                this.explorer.Position -= this.velocity;
+                this.explorer.State = this.explorer.IdleWalk;
+                //Roteert de explorer verticaal zodat hij omhoog beweegt
+                this.explorer.IdleWalk.Effect = SpriteEffects.FlipVertically;
+                this.explorer.IdleWalk.Rotation = (float)Math.PI / -2;
+
             }
 
-            //Als de Rifht knop wordt losgelatenm dan moet de explorer weer in de toestand idle komen
             if (Input.EdgeDetectKeyUp(Keys.Up))
             {
                 this.explorer.State = this.explorer.Idle;
-                this.explorer.Idle.Initialize();
-                this.explorer.WalkDown.Initialize();
-                this.explorer.WalkLeft.Initialize();
-                this.explorer.WalkRight.Initialize();
-                this.explorer.Idle.Rotation = 199.5f;
+                this.explorer.Idle.Effect = SpriteEffects.FlipHorizontally;
+                this.explorer.Idle.Rotation = (float)Math.PI / -2;
             }
-
-            this.explorer.Position -= this.velocity;
             base.Update(gameTime);
         }
-
-
-        public new void Draw(GameTime gameTime)
-        {
-            base.Draw(gameTime);
-        }
     }
+
 }

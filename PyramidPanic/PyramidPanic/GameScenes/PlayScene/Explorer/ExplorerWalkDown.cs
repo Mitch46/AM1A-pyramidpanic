@@ -30,7 +30,7 @@ namespace PyramidPanic
                                                       32,
                                                       32);
             this.velocity = new Vector2(0f, this.explorer.Speed);
-            this.rotation = (float)Math.PI / 2;
+            this.rotation = 900f;
         }
 
         public void Initialize()
@@ -45,7 +45,7 @@ namespace PyramidPanic
             // kan lopen.
             this.explorer.Position += this.velocity;
 
-            if (this.explorer.Position.Y > 480 - 16)
+            if (this.explorer.Position.Y > 480 - 20)
             {
                 //Breng de explorer in de toestand Idle
                 this.explorer.Position -= this.velocity;

@@ -44,13 +44,13 @@ namespace PyramidPanic
             // Deze code zorgt ervoor dat de explorer niet buiten de rechterrand
             // kan lopen.
 
-            if (this.explorer.Position.X < 16 )
+            if (this.explorer.Position.X < 20 )
             {
                 //Breng de explorer in de toestand Idle
                 this.explorer.Position += this.velocity;
                 this.explorer.State = this.explorer.IdleWalk;
                 this.explorer.IdleWalk.Effect = SpriteEffects.FlipHorizontally;
-                this.explorer.IdleWalk.Rotation = 0f;                
+                this.explorer.IdleWalk.Rotation = 0f;         
             }            
 
             // Als de Right knop wordt losgelaten, dan moet de 
