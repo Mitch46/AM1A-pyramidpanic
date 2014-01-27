@@ -48,7 +48,7 @@ namespace PyramidPanic
             if (this.explorer.Position.Y < 20)
             {
                 //Breng de explorer in de toestand walkdown
-                this.explorer.Position -= this.velocity;
+                this.explorer.Position += this.velocity;
                 this.explorer.State = this.explorer.IdleWalk;
                 //Roteert de explorer verticaal zodat hij omhoog beweegt
                 this.explorer.IdleWalk.Effect = SpriteEffects.FlipVertically;
@@ -62,6 +62,7 @@ namespace PyramidPanic
                 this.explorer.Idle.Effect = SpriteEffects.None;
                 this.explorer.Idle.Rotation = (float)Math.PI / -2;
             }
+
             base.Update(gameTime);
         }
     }
